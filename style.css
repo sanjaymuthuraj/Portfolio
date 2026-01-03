@@ -123,3 +123,15 @@ svg{fill: aliceblue;}
     border-radius: 1em;
     cursor: pointer;
 }
+
+@media (max-width:600px){
+    .head-section, .home-container, .project-container{
+        flex-direction: column;
+    }
+    .home-container{
+        height: 100vh;
+    }
+    .project{
+        flex-direction: column;
+    }
+}
