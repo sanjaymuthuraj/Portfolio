@@ -128,10 +128,16 @@ svg{fill: aliceblue;}
     .head-section, .home-container, .project-container{
         flex-direction: column;
     }
+    .head-section{
+        padding: 0.5rem;
+    }
     .home-container{
         height: 100vh;
     }
     .project{
         flex-direction: column;
+    }
+    li{
+        margin: 0.5rem;
     }
 }
