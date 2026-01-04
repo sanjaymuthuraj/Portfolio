@@ -118,13 +118,23 @@ svg{fill: aliceblue;}
 }
 .project-button{
     border: none;
-    padding: 1em;
+    padding: 0.5em;
     box-sizing: border-box;
-    border-radius: 1em;
+    border-radius: 0.5em;
     cursor: pointer;
+    background: transparent;
+    color: aliceblue;
+}
+.tech-box{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.tech-used{
+    width: 2em;
 }
 
-@media (max-width:600px){
+@media (max-width: 768px){
     .head-section, .home-container, .project-container{
         flex-direction: column;
     }
@@ -139,5 +149,8 @@ svg{fill: aliceblue;}
     }
     li{
         margin: 0.5rem;
+    }
+    .tech-box{
+    justify-content: center;
     }
 }
