@@ -7,12 +7,12 @@ body{
 .head-section, .home-container, .skills, .project-container, .footer-container{
     padding: 1em;
     margin: 1em;
-    box-sizing: border-box;
     border-radius: 1em;
     corner-shape: bevel;
+    text-align: center;
+    box-sizing: border-box;
     backdrop-filter: blur(0.2em);
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.349);
-    text-align: center;
 }
 .head-section{
     position: relative;
@@ -23,9 +23,7 @@ body{
     align-items: center;
     justify-content: space-between;
 }
-#me, #skill, #web{
-    scroll-margin-top: 10em;
-}
+#me, #skill, #web{scroll-margin-top: 10em;}
 
 a{
     text-decoration: none;
@@ -144,6 +142,11 @@ svg{fill: aliceblue;}
     .home-container{
         height: 100vh;
     }
+    .hero{
+        width: 15em;
+        height: 15em;
+    }
+    
     .project{
         flex-direction: column;
     }
