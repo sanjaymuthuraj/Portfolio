@@ -60,8 +60,7 @@ li:hover::before{width: 105%;}
 .hero{
     width: 20em;
     height: 20em;
-    border-radius: 50%;
-    object-position: center;
+    object-position: top;
     object-fit: cover;
     flex-shrink: 0;
 }
