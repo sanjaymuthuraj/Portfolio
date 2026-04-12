@@ -106,32 +106,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Hamburger Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
+    const navOverlay = document.getElementById('nav-overlay');
+    const navCloseBtn = document.getElementById('nav-close');
+
+    function openMenu() {
+        navLinks.classList.add('open');
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        if (navOverlay) { navOverlay.style.display = 'block'; requestAnimationFrame(() => navOverlay.classList.add('active')); }
+        document.body.style.overflow = 'hidden';
+    }
 
     function closeMenu() {
         navLinks.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
+        if (navOverlay) {
+            navOverlay.classList.remove('active');
+            setTimeout(() => { navOverlay.style.display = 'none'; }, 300);
+        }
         document.body.style.overflow = '';
     }
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('open');
-            hamburger.classList.toggle('open', isOpen);
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            navLinks.classList.contains('open') ? closeMenu() : openMenu();
         });
 
-        // Close menu when a nav link is clicked
+        if (navCloseBtn) navCloseBtn.addEventListener('click', closeMenu);
+        if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+
         navLinks.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                closeMenu();
-            }
         });
     }
 
