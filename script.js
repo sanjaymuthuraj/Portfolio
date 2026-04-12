@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // 0. Scroll Progress Bar + Navbar shadow on scroll
+    const scrollBar = document.getElementById('scroll-progress');
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (scrollBar) scrollBar.style.width = progress + '%';
+        if (navbar) navbar.classList.toggle('scrolled', scrollTop > 20);
+    }, { passive: true });
+
     // 1. Intersection Observer for fade-in animations on scroll
     const observerOptions = {
         threshold: 0.05,
