@@ -105,12 +105,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5. Hamburger Mobile Menu
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const mobileNav = document.getElementById('mobile-nav');
     const navOverlay = document.getElementById('nav-overlay');
     const navCloseBtn = document.getElementById('nav-close');
 
     function openMenu() {
-        navLinks.classList.add('open');
+        mobileNav.classList.add('open');
         hamburger.classList.add('open');
         hamburger.setAttribute('aria-expanded', 'true');
         if (navOverlay) { navOverlay.style.display = 'block'; requestAnimationFrame(() => navOverlay.classList.add('active')); }
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function closeMenu() {
-        navLinks.classList.remove('open');
+        mobileNav.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         if (navOverlay) {
@@ -128,15 +128,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = '';
     }
 
-    if (hamburger && navLinks) {
+    if (hamburger && mobileNav) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.contains('open') ? closeMenu() : openMenu();
+            mobileNav.classList.contains('open') ? closeMenu() : openMenu();
         });
 
         if (navCloseBtn) navCloseBtn.addEventListener('click', closeMenu);
         if (navOverlay) navOverlay.addEventListener('click', closeMenu);
 
-        navLinks.querySelectorAll('.nav-link').forEach(link => {
+        mobileNav.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
     }
