@@ -3,355 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay M | Software Engineer</title>
+    <title>Sanjay M | Software Engineer Portfolio</title>
+    <!-- Google Fonts: Inter & Fira Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Devicon Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div id="scroll-progress"></div>
-    <div id="nav-overlay" class="nav-overlay"></div>
-    <header class="navbar">
-        <div class="nav-content">
-            <h1 class="logo">Sanjay M</h1>
-            <!-- Desktop nav (hidden on mobile via CSS) -->
-            <nav class="desktop-nav">
-                <ul class="desktop-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Stack</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
 
-    <!-- Mobile nav drawer — OUTSIDE header so backdrop-filter doesn't trap it -->
-    <nav class="mobile-nav" id="mobile-nav">
-        <ul class="nav-links" id="nav-links">
-            <li class="nav-close-item">
-                <button id="nav-close" class="nav-close-btn" aria-label="Close menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    Close Menu
-                </button>
-            </li>
-            <li><a href="#home" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Home
-            </a></li>
-            <li><a href="#about" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                About
-            </a></li>
-            <li><a href="#skills" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                Stack
-            </a></li>
-            <li><a href="#experience" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-                Experience
-            </a></li>
-            <li><a href="#projects" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                Work
-            </a></li>
-            <li><a href="#contact" class="nav-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Contact
-            </a></li>
-        </ul>
-    </nav>
+    <div class="portfolio-container">
+        <!-- LEFT COLUMN: SIDEBAR (Dark Theme) -->
+        <aside class="sidebar">
+            <!-- Profile Avatar Block -->
+            <div class="avatar-block">
+                <div class="avatar-container">
+                    <svg class="avatar-blueprint" viewBox="-20 -20 240 240" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Asymmetric chamfer outline (top-left & bottom-right cut) -->
+                        <path d="M 30,0 L 200,0 L 200,170 L 170,200 L 0,200 L 0,30 Z" fill="none" stroke="var(--green-sidebar)" stroke-width="2"/>
+                        <!-- Top-left cut line connector & dot -->
+                        <line x1="15" y1="15" x2="-12" y2="-12" stroke="var(--green-sidebar)" stroke-width="2" />
+                        <circle cx="-12" cy="-12" r="4" fill="var(--green-sidebar)" />
+                        <!-- Bottom-right cut line connector & dot -->
+                        <line x1="185" y1="185" x2="212" y2="212" stroke="var(--green-sidebar)" stroke-width="2" />
+                        <circle cx="212" cy="212" r="4" fill="none" stroke="var(--green-sidebar)" stroke-width="2" />
+                    </svg>
+                    <img src="assert/sanjay.jpeg" alt="Sanjay M" class="avatar-img">
+                </div>
+            </div>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text-container">
-                    <span class="badge"><span class="badge-dot"></span>Software Engineer</span>
-                    <h1 class="hero-title">Building <br><span class="typing-text">digital experiences.</span><span class="cursor"></span></h1>
-                    <p class="hero-desc">
-                        Hi, I'm Sanjay M. A passionate software engineer specializing in scalable, high-performance web applications. I focus on writing clean code, building intuitive interfaces, and solving complex problems.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn-primary">
-                            View My Work
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <!-- SECTION: Soft Skills -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-header">
+                    <span class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/></svg>
+                    </span>
+                    <div class="header-line"></div>
+                    <span class="header-title">Soft skills</span>
+                </div>
+                <div class="soft-skills-tags">
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Adaptability</span>
+                    <span class="skill-tag">Leadership</span>
+                </div>
+            </div>
+
+            <!-- SECTION: Hard Skills -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-header">
+                    <span class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </span>
+                    <div class="header-line"></div>
+                    <span class="header-title">Hard skills</span>
+                </div>
+                <div class="hard-skills-list">
+                    <div class="hard-skill-item">
+                        <i class="devicon-javascript-plain"></i>
+                        <span class="skill-name-list">JS, React, HTML5, CSS3</span>
+                    </div>
+                    <div class="hard-skill-item">
+                        <i class="devicon-nodejs-plain"></i>
+                        <span class="skill-name-list">Node.js, Express, REST APIs</span>
+                    </div>
+                    <div class="hard-skill-item">
+                        <i class="devicon-mysql-plain"></i>
+                        <span class="skill-name-list">MySQL, MongoDB, Postgres</span>
+                    </div>
+                    <div class="hard-skill-item">
+                        <i class="devicon-docker-plain"></i>
+                        <span class="skill-name-list">Docker, Git, GitHub, Linux</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: Spider (Radar Skill Chart) -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-header">
+                    <span class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <div class="header-line"></div>
+                    <span class="header-title">Spider</span>
+                </div>
+                <div class="radar-chart-container">
+                    <svg class="radar-chart" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer Grid Hexagon -->
+                        <polygon points="170,100 135,160.6 65,160.6 30,100 65,39.4 135,39.4" class="grid-polygon" />
+                        <!-- Middle Grid Hexagon -->
+                        <polygon points="145,100 122.5,139 77.5,139 55,100 77.5,61 122.5,61" class="grid-polygon" />
+                        <!-- Inner Grid Hexagon -->
+                        <polygon points="120,100 110,117.3 90,117.3 80,100 90,82.7 110,82.7" class="grid-polygon" />
+                        
+                        <!-- Axis Lines -->
+                        <line x1="30" y1="100" x2="170" y2="100" class="axis-line" />
+                        <line x1="65" y1="39.4" x2="135" y2="160.6" class="axis-line" />
+                        <line x1="135" y1="39.4" x2="65" y2="160.6" class="axis-line" />
+                        
+                        <!-- Text Labels -->
+                        <text x="142" y="28" class="radar-label label-a">Frontend</text>
+                        <text x="58" y="28" class="radar-label label-b text-end">Backend</text>
+                        <text x="10" y="104" class="radar-label label-c text-end">Database</text>
+                        <text x="58" y="182" class="radar-label label-d text-end">Tools</text>
+                        <text x="142" y="182" class="radar-label label-e">APIs</text>
+                        <text x="180" y="104" class="radar-label label-f">UI/UX</text>
+
+                        <!-- Skill Level Polygon (Value mapping) -->
+                        <polygon points="131.5,45.4 70.25,48.5 44,100 73.75,145.5 129.75,151.5 149,100" class="skill-polygon" />
+                        
+                        <!-- Value Dots -->
+                        <circle cx="131.5" cy="45.4" r="3.5" class="skill-dot" />
+                        <circle cx="70.25" cy="48.5" r="3.5" class="skill-dot" />
+                        <circle cx="44" cy="100" r="3.5" class="skill-dot" />
+                        <circle cx="73.75" cy="145.5" r="3.5" class="skill-dot" />
+                        <circle cx="129.75" cy="151.5" r="3.5" class="skill-dot" />
+                        <circle cx="149" cy="100" r="3.5" class="skill-dot" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- SECTION: Languages -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-header">
+                    <span class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </span>
+                    <div class="header-line"></div>
+                    <span class="header-title">Languages</span>
+                </div>
+                <div class="languages-container">
+                    <div class="lang-row">
+                        <span class="lang-name">English</span>
+                        <div class="lang-meter">
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                        </div>
+                    </div>
+                    <div class="lang-row">
+                        <span class="lang-name">Tamil</span>
+                        <div class="lang-meter">
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                        </div>
+                    </div>
+                    <div class="lang-row">
+                        <span class="lang-name">Hindi</span>
+                        <div class="lang-meter">
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block filled"></span>
+                            <span class="lang-block empty"></span>
+                            <span class="lang-block empty"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT COLUMN: CONTENT AREA (Light Theme) -->
+        <main class="content-area">
+            <!-- STICKY CONTENT NAVBAR -->
+            <header class="content-navbar">
+                <nav class="content-nav">
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- MAIN HEADER SECTION -->
+            <section id="profile-summary" class="profile-summary-section">
+                <div class="profile-header-block">
+                    <h1 class="profile-name">Sanjay M</h1>
+                    <div class="profile-subtitle-row">
+                        <span class="profile-role">Software Engineer specializing in <span class="typing-text"></span><span class="cursor"></span></span>
+                        <span class="profile-age">3+ years experience</span>
+                    </div>
+                    
+                    <!-- Contact Section Divided -->
+                    <div class="content-divider-label">
+                        <div class="divider-line"></div>
+                        <span class="divider-text">Contact</span>
+                        <div class="divider-line"></div>
+                    </div>
+                    
+                    <div class="contact-grid">
+                        <a href="mailto:sanjaymuthuraj20@gmail.com" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            sanjaymuthuraj20@gmail.com
                         </a>
-                        <a href="mailto:sanjaymuthuraj20@gmail.com" class="btn-secondary">
-                            Hire Me
+                        <a href="tel:+918838017561" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            +91 8838017561
                         </a>
-                    </div>
-                    <div class="social-links-container">
-                        <a href="https://www.linkedin.com/in/sanjay-m-11104a2b4/" target="_blank" class="social-btn" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://github.com/sanjaymuthuraj" target="_blank" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            sanjaymuthuraj / github
                         </a>
-                        <a href="https://github.com/sanjaymuthuraj" target="_blank" class="social-btn" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        <a href="https://www.linkedin.com/in/sanjay-m-11104a2b4/" target="_blank" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            linkedin
                         </a>
-                        <a href="mailto:sanjaymuthuraj20@gmail.com" class="social-btn" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="M19 16v6"/><path d="M16 19h6"/></svg>
-                        </a>
+                        <span class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            World
+                        </span>
                     </div>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img loading="eager" class="hero-img" src="assert/sanjay.jpeg" alt="Sanjay M">
-                </div>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="section-header">
-                <span class="section-label">Who I Am</span>
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Hello! I am Sanjay M, a passionate Software Engineer focused on architecting beautiful, highly functional, and scalable digital experiences. With a deep admiration for clean design and robust engineering, I've spent the past few years bridging the gap between sophisticated backends and engaging front-end interfaces.</p>
-                    <p>My expertise covers the modern JavaScript ecosystem — from dynamic React frontends to secure Node.js APIs and Dockerized database deployments. Whether I'm configuring complex system architectures, optimizing application performance, or building intuitive user workflows, my philosophy remains the same: write efficient, maintainable, and elegant code.</p>
-                    <p>When I'm not coding, I am constantly learning about advanced cloud infrastructures, analyzing the newest UI trends, or refining my skills to stay on the absolute bleeding edge of technology.</p>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <div class="stat-icon">🚀</div>
-                        <div class="stat-info">
-                            <h3>3+</h3>
-                            <p>Major Projects Shipped</p>
-                        </div>
+                    <!-- Interests Section Divided -->
+                    <div class="content-divider-label">
+                        <div class="divider-line"></div>
+                        <span class="divider-text">Interests</span>
+                        <div class="divider-line"></div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-icon">⚡</div>
-                        <div class="stat-info">
-                            <h3>10+</h3>
-                            <p>Technologies Mastered</p>
+                    
+                    <div class="terminal-interests">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot-btn close"></span>
+                                <span class="dot-btn minimize"></span>
+                                <span class="dot-btn expand"></span>
+                            </div>
+                            <span class="terminal-title">interests.sh</span>
                         </div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-icon">💻</div>
-                        <div class="stat-info">
-                            <h3>1k+</h3>
-                            <p>Code Commits Made</p>
+                        <div class="terminal-body">
+                            <div class="terminal-line prompt-line">
+                                <span class="prompt-user">guest</span><span class="prompt-at">@</span><span class="prompt-host">sanjay-m</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-char">$</span>
+                                <span class="prompt-input">./list-interests.sh</span>
+                            </div>
+                            <div class="terminal-output">
+                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Coding</div>
+                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Open Source</div>
+                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Gaming</div>
+                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> UI Design</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="skills" class="skills-section">
-            <div class="section-header">
-                <span class="section-label">What I Use</span>
-                <h2 class="section-title">Technical Expertise</h2>
-            </div>
-            
-            <div class="skill-category">
-                <h3 class="category-title">Languages & Frontend</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper js">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
-                        </div>
-                        <div><p>JavaScript</p></div>
+            <!-- SECTION: About Me -->
+            <section id="about" class="about-section scroll-section">
+                <div class="capsule-container">
+                    <div class="capsule-label">About Me</div>
+                    <div class="capsule-line"></div>
+                    <span class="capsule-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I am Sanjay M, a passionate Software Engineer focused on architecting beautiful, highly functional, and scalable digital experiences. With a deep admiration for clean design and robust engineering, I've spent the past few years bridging the gap between sophisticated backends and engaging front-end interfaces.</p>
+                        <p>My expertise covers the modern JavaScript ecosystem — from dynamic React frontends to secure Node.js APIs and Dockerized database deployments. Whether I'm configuring complex system architectures, optimizing application performance, or building intuitive user workflows, my philosophy remains the same: write efficient, maintainable, and elegant code.</p>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper html">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Major Projects Shipped</span>
                         </div>
-                        <div><p>HTML5</p></div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper css">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Technologies Mastered</span>
                         </div>
-                        <div><p>CSS3</p></div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">k+</span>
+                            <span class="stat-label">Code Commits Made</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="skill-category">
-                <h3 class="category-title">Tools & Databases</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper github">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        </div>
-                        <div><p>GitHub</p></div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper git">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
-                        </div>
-                        <div><p>Git</p></div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon-wrapper docker">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>
-                        </div>
-                        <div><p>Docker</p></div>
-                    </div>
+            <!-- SECTION: Experience -->
+            <section id="experience" class="experience-section scroll-section">
+                <div class="capsule-container">
+                    <div class="capsule-label">Experiences</div>
+                    <div class="capsule-line"></div>
+                    <span class="capsule-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                    </span>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h3 class="category-title">Core Concepts</h3>
-                <div class="skills-grid">
-                    <div class="skill-card concept-card">
-                        <div><p>Responsive Design</p></div>
-                    </div>
-                    <div class="skill-card concept-card">
-                        <div><p>RESTful APIs</p></div>
-                    </div>
-                    <div class="skill-card concept-card">
-                        <div><p>Database Management</p></div>
-                    </div>
-                    <div class="skill-card concept-card">
-                        <div><p>UI/UX Principles</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="timeline-section">
-            <div class="section-header">
-                <span class="section-label">My Journey</span>
-                <h2 class="section-title">Experience</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2023 - Present</span>
-                        <h3>Full Stack Software Engineer</h3>
-                        <p>Leading the development of highly scalable web applications from conception to production deployments.</p>
-                        <ul class="timeline-list">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Full Stack Software Engineer</h3>
+                            <span class="job-date">2023 - Present</span>
+                        </div>
+                        <div class="company-row">
+                            <span class="company-name">Nice Company</span>
+                            <span class="company-location">Remote</span>
+                        </div>
+                        <div class="green-divider"></div>
+                        <p class="job-summary">Leading the development of highly scalable web applications from conception to production deployments.</p>
+                        <ul class="job-details-list">
                             <li>Engineered highly available server-side architectures using Node.js and monolithic API structures.</li>
                             <li>Orchestrated seamless UI transitions and reactive component architectures via modern JavaScript frameworks.</li>
                             <li>Optimized complex database queries in PostgreSQL/MongoDB, drastically improving data loading times.</li>
                         </ul>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2022 - 2023</span>
-                        <h3>Freelance Web Developer</h3>
-                        <p>Partnered with diverse clients to deliver highly responsive, custom-tailored branding platforms.</p>
-                        <ul class="timeline-list">
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Freelance Web Developer</h3>
+                            <span class="job-date">2022 - 2023</span>
+                        </div>
+                        <div class="company-row">
+                            <span class="company-name">Freelance / Agencies</span>
+                            <span class="company-location">Self-employed</span>
+                        </div>
+                        <div class="green-divider"></div>
+                        <p class="job-summary">Partnered with diverse clients to deliver highly responsive, custom-tailored branding platforms.</p>
+                        <ul class="job-details-list">
                             <li>Translated complex UI/UX wireframes into pixel-perfect HTML5, CSS3, and interactive JavaScript interfaces.</li>
                             <li>Integrated secure end-to-end user authentication and automated continuous integration deployments.</li>
                             <li>Provided comprehensive post-launch technical support and maintained high SLA uptimes.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2022</span>
-                        <h3>Computer Science Foundation</h3>
-                        <p>Built a profound academic base rooted in algorithmic complexity and foundational software engineering.</p>
-                        <ul class="timeline-list">
-                            <li>Mastered deep Object-Oriented Programming principles and advanced dynamic data-structures.</li>
-                            <li>Developed a passion for version control (Git) and containerization paradigms (Docker) through extensive architectural study.</li>
-                        </ul>
+            </section>
+
+            <!-- SECTION: Selected Projects -->
+            <section id="projects" class="projects-section scroll-section">
+                <div class="capsule-container">
+                    <div class="capsule-label">Projects</div>
+                    <div class="capsule-line"></div>
+                    <span class="capsule-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    </span>
+                </div>
+
+                <div class="projects-list-grid">
+                    <div class="project-item-card">
+                        <div class="project-image-box">
+                            <img src="assert/l&f.jpg" alt="Lost & Locate" class="project-thumb">
+                        </div>
+                        <div class="project-info-box">
+                            <div class="project-header-row">
+                                <h3 class="project-name">Lost & Locate</h3>
+                                <a href="https://github.com/sanjaymuthuraj" target="_blank" class="project-source-btn">
+                                    Source
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            </div>
+                            <p class="project-summary-text">A community-driven application designed to help people report and recover lost items. Features location services, robust image uploads, and an intuitive user interface.</p>
+                            <div class="project-tech-badges">
+                                <span class="badge-tag">React</span>
+                                <span class="badge-tag">Node.js</span>
+                                <span class="badge-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item-card">
+                        <div class="project-image-box">
+                            <img src="assert/paw.jpg" alt="Happy Paws" class="project-thumb">
+                        </div>
+                        <div class="project-info-box">
+                            <div class="project-header-row">
+                                <h3 class="project-name">Happy Paws</h3>
+                                <a href="https://github.com/sanjaymuthuraj" target="_blank" class="project-source-btn">
+                                    Source
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            </div>
+                            <p class="project-summary-text">A community-focused platform engineered to support shelter animals. Provides centralized hubs for adoptions, volunteer networking, and pet care advice.</p>
+                            <div class="project-tech-badges">
+                                <span class="badge-tag">HTML5</span>
+                                <span class="badge-tag">CSS3</span>
+                                <span class="badge-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item-card">
+                        <div class="project-image-box">
+                            <img src="assert/spotify.webp" alt="Spotify Clone" class="project-thumb">
+                        </div>
+                        <div class="project-info-box">
+                            <div class="project-header-row">
+                                <h3 class="project-name">Spotify Clone</h3>
+                                <a href="https://github.com/sanjaymuthuraj" target="_blank" class="project-source-btn">
+                                    Source
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            </div>
+                            <p class="project-summary-text">A complex front-end web application that meticulously replicates the core user interface and audio experience of Spotify. Focused on high performance and responsiveness.</p>
+                            <div class="project-tech-badges">
+                                <span class="badge-tag">React</span>
+                                <span class="badge-tag">HTML5</span>
+                                <span class="badge-tag">CSS3</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="projects" class="projects-section">
-            <h2 class="section-title">Selected Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img loading="lazy" src="assert/l&f.jpg" alt="Lost and Found" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Lost & Locate</h3>
-                        <p class="project-desc">
-                            A community-driven application designed to help people report and recover lost items efficiently. Built with modern web technologies, it features location-based services, robust image uploads, and an intuitive user interface to quickly connect individuals and secure belongings.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">PostgreSQL</span>
+            <!-- SECTION: Education -->
+            <section id="education" class="education-section scroll-section">
+                <div class="capsule-container">
+                    <div class="capsule-label">Education</div>
+                    <div class="capsule-line"></div>
+                    <span class="capsule-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    </span>
+                </div>
+
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3 class="degree-title">Computer Science Foundation</h3>
+                            <span class="degree-date">2020 - 2022</span>
                         </div>
-                        <a href="https://github.com/sanjaymuthuraj" target="_blank" class="view-project-btn">
-                            View Source
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <div class="university-row">
+                            <span class="uni-name">Self-Directed Study / Foundations</span>
+                            <span class="uni-location">Online & Practical Labs</span>
+                        </div>
+                        <div class="green-divider"></div>
+                        <p class="degree-desc">Built a profound academic base rooted in algorithmic complexity and foundational software engineering. Focus areas included version control systems (Git), containerization paradigms (Docker), and advanced Object-Oriented programming.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Activities -->
+            <section id="activities" class="activities-section scroll-section">
+                <div class="capsule-container">
+                    <div class="capsule-label">Activities</div>
+                    <div class="capsule-line"></div>
+                    <span class="capsule-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+                </div>
+
+                <div class="activities-grid-bullets">
+                    <div class="activity-bullet-item">
+                        <span class="bullet-square"></span>
+                        <span class="activity-text">Contributing to Open Source software and developer tooling</span>
+                    </div>
+                    <div class="activity-bullet-item">
+                        <span class="bullet-square"></span>
+                        <span class="activity-text">Building personal SaaS web applications and automation utilities</span>
+                    </div>
+                    <div class="activity-bullet-item">
+                        <span class="bullet-square"></span>
+                        <span class="activity-text">Exploring advanced cloud infrastructures and containerization scaling</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER / CONTACT SECTION -->
+            <footer id="contact" class="footer scroll-section">
+                <div class="footer-content">
+                    <h2 class="footer-title">Let's build something.</h2>
+                    <p class="footer-desc">I am actively open for new software engineering opportunities and technical collaborations. If you have a question or an exciting project in mind, let's connect.</p>
+                    <div class="footer-contact-info">
+                        <a href="mailto:sanjaymuthuraj20@gmail.com" class="footer-contact-link">
+                            sanjaymuthuraj20@gmail.com
+                        </a>
+                        <span class="footer-divider">|</span>
+                        <a href="tel:+918838017561" class="footer-contact-link">
+                            +91 8838017561
                         </a>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img loading="lazy" src="assert/paw.jpg" alt="HAPPY PAWS" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Happy Paws</h3>
-                        <p class="project-desc">
-                            A community-focused platform engineered to support the care and well-being of animals. It provides a centralized hub for sharing adoption opportunities, volunteer networking, and pet care resources. The application streamlines communication between shelters and volunteers.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">JavaScript</span>
-                        </div>
-                        <a href="https://github.com/sanjaymuthuraj" target="_blank" class="view-project-btn">
-                            View Source
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Sanjay M. Refactored into a custom resume layout.</p>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img loading="lazy" src="assert/spotify.webp" alt="Spotify Clone" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Spotify Clone</h3>
-                        <p class="project-desc">
-                            A complex front-end web application that meticulously replicates the core user interface and experience of Spotify. Focused on high-performance rendering, component reusability, and achieving pixel-perfect responsive design across devices.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                        </div>
-                        <a href="https://github.com/sanjaymuthuraj" target="_blank" class="view-project-btn">
-                            View Source
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="footer">
-        <div class="footer-content">
-            <h2 class="footer-title">Let's build something.</h2>
-            <p class="footer-desc">I am actively open for new software engineering opportunities and technical collaborations. If you have a question or an exciting project in mind, let's connect.</p>
-            <div class="footer-contact-info">
-                <a href="mailto:sanjaymuthuraj20@gmail.com" class="contact-link">
-                    sanjaymuthuraj20@gmail.com
-                </a>
-                <span style="color: var(--border);">|</span>
-                <a href="tel:+918838017561" class="contact-link">
-                    +91 8838017561
-                </a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Sanjay M. Designed and built with passion.</p>
-        </div>
-    </footer>
+            </footer>
+        </main>
+    </div>
 </body>
 </html>
