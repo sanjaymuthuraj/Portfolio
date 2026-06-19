@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjay M | Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Sanjay M, a Software Engineer specializing in building beautiful, highly functional, and scalable digital experiences.">
+    <meta name="keywords" content="Sanjay M, Software Engineer, Portfolio, Full Stack Developer, React, Node.js, Web Development">
+    <meta name="author" content="Sanjay M">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sanjay M | Software Engineer Portfolio">
+    <meta property="og:description" content="Portfolio of Sanjay M, a Software Engineer specializing in building beautiful, highly functional, and scalable digital experiences.">
+    <meta property="og:image" content="assert/sanjay.jpeg">
+    <meta property="og:url" content="https://github.com/sanjaymuthuraj">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sanjay M | Software Engineer Portfolio">
+    <meta name="twitter:description" content="Portfolio of Sanjay M, a Software Engineer specializing in building beautiful, highly functional, and scalable digital experiences.">
+    <meta name="twitter:image" content="assert/sanjay.jpeg">
     <!-- Google Fonts: Inter & Fira Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +32,7 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
+    <canvas id="page-web-canvas"></canvas>
 
     <div class="portfolio-container">
         <!-- LEFT COLUMN: SIDEBAR (Dark Theme) -->
@@ -32,7 +50,7 @@
                         <line x1="185" y1="185" x2="212" y2="212" stroke="var(--green-sidebar)" stroke-width="2" />
                         <circle cx="212" cy="212" r="4" fill="none" stroke="var(--green-sidebar)" stroke-width="2" />
                     </svg>
-                    <img src="assert/sanjay.jpeg" alt="Sanjay M" class="avatar-img">
+                    <img src="assert/sanjay.jpeg" alt="Sanjay M" class="avatar-img" width="200" height="200">
                 </div>
             </div>
 
@@ -48,9 +66,9 @@
                 <div class="soft-skills-tags">
                     <span class="skill-tag">Problem Solving</span>
                     <span class="skill-tag">Communication</span>
-                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Team Collaboration</span>
                     <span class="skill-tag">Adaptability</span>
-                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Self-Motivation</span>
                 </div>
             </div>
 
@@ -63,22 +81,91 @@
                     <div class="header-line"></div>
                     <span class="header-title">Hard skills</span>
                 </div>
-                <div class="hard-skills-list">
-                    <div class="hard-skill-item">
-                        <i class="devicon-javascript-plain"></i>
-                        <span class="skill-name-list">JS, React, HTML5, CSS3</span>
+                <div class="hard-skills-category">
+                    <div class="category-title">Languages & Frontend</div>
+                    <div class="hard-skills-tags">
+                        <span class="hard-skill-tag">
+                            <i class="devicon-javascript-plain"></i>
+                            JavaScript
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-react-original"></i>
+                            React
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-html5-plain"></i>
+                            HTML5
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-css3-plain"></i>
+                            CSS3
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-c-plain"></i>
+                            C
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-java-plain"></i>
+                            Java
+                        </span>
                     </div>
-                    <div class="hard-skill-item">
-                        <i class="devicon-nodejs-plain"></i>
-                        <span class="skill-name-list">Node.js, Express, REST APIs</span>
+                </div>
+
+                <div class="hard-skills-category">
+                    <div class="category-title">Backend & APIs</div>
+                    <div class="hard-skills-tags">
+                        <span class="hard-skill-tag">
+                            <i class="devicon-nodejs-plain"></i>
+                            Node.js
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-express-original"></i>
+                            Express
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-json-plain"></i>
+                            REST APIs
+                        </span>
                     </div>
-                    <div class="hard-skill-item">
-                        <i class="devicon-mysql-plain"></i>
-                        <span class="skill-name-list">MySQL, MongoDB, Postgres</span>
+                </div>
+
+                <div class="hard-skills-category">
+                    <div class="category-title">Databases</div>
+                    <div class="hard-skills-tags">
+                        <span class="hard-skill-tag">
+                            <i class="devicon-mysql-plain"></i>
+                            MySQL
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-mongodb-plain"></i>
+                            MongoDB
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-postgresql-plain"></i>
+                            PostgreSQL
+                        </span>
                     </div>
-                    <div class="hard-skill-item">
-                        <i class="devicon-docker-plain"></i>
-                        <span class="skill-name-list">Docker, Git, GitHub, Linux</span>
+                </div>
+
+                <div class="hard-skills-category">
+                    <div class="category-title">Tools & DevOps</div>
+                    <div class="hard-skills-tags">
+                        <span class="hard-skill-tag">
+                            <i class="devicon-docker-plain"></i>
+                            Docker
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-git-plain"></i>
+                            Git
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-github-original"></i>
+                            GitHub
+                        </span>
+                        <span class="hard-skill-tag">
+                            <i class="devicon-postman-plain"></i>
+                            Postman
+                        </span>
                     </div>
                 </div>
             </div>
@@ -145,7 +232,7 @@
                             <span class="lang-block filled"></span>
                             <span class="lang-block filled"></span>
                             <span class="lang-block filled"></span>
-                            <span class="lang-block filled"></span>
+                            <span class="lang-block empty"></span>
                         </div>
                     </div>
                     <div class="lang-row">
@@ -155,15 +242,15 @@
                             <span class="lang-block filled"></span>
                             <span class="lang-block filled"></span>
                             <span class="lang-block filled"></span>
-                            <span class="lang-block filled"></span>
+                            <span class="lang-block empty"></span>
                         </div>
                     </div>
                     <div class="lang-row">
-                        <span class="lang-name">Hindi</span>
+                        <span class="lang-name">Japanese</span>
                         <div class="lang-meter">
                             <span class="lang-block filled"></span>
-                            <span class="lang-block filled"></span>
-                            <span class="lang-block filled"></span>
+                            <span class="lang-block empty"></span>
+                            <span class="lang-block empty"></span>
                             <span class="lang-block empty"></span>
                             <span class="lang-block empty"></span>
                         </div>
@@ -193,7 +280,6 @@
                     <h1 class="profile-name">Sanjay M</h1>
                     <div class="profile-subtitle-row">
                         <span class="profile-role">Software Engineer specializing in <span class="typing-text"></span><span class="cursor"></span></span>
-                        <span class="profile-age">3+ years experience</span>
                     </div>
                     
                     <!-- Contact Section Divided -->
@@ -222,7 +308,7 @@
                         </a>
                         <span class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            World
+                            I'm Currently Exploring Exciting Opportunities
                         </span>
                     </div>
 
@@ -249,8 +335,8 @@
                             </div>
                             <div class="terminal-output">
                                 <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Coding</div>
+                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Vibe Coding</div>
                                 <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Open Source</div>
-                                <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> Gaming</div>
                                 <div class="interest-output-item"><span class="bullet-prompt">&gt;</span> UI Design</div>
                             </div>
                         </div>
@@ -353,7 +439,7 @@
                 <div class="projects-list-grid">
                     <div class="project-item-card">
                         <div class="project-image-box">
-                            <img src="assert/l&f.jpg" alt="Lost & Locate" class="project-thumb">
+                            <img src="assert/l&f.jpg" alt="Lost & Locate" class="project-thumb" width="140" height="140" loading="lazy">
                         </div>
                         <div class="project-info-box">
                             <div class="project-header-row">
@@ -365,16 +451,18 @@
                             </div>
                             <p class="project-summary-text">A community-driven application designed to help people report and recover lost items. Features location services, robust image uploads, and an intuitive user interface.</p>
                             <div class="project-tech-badges">
-                                <span class="badge-tag">React</span>
-                                <span class="badge-tag">Node.js</span>
-                                <span class="badge-tag">MongoDB</span>
+                                <span class="badge-tag"><i class="devicon-react-original"></i>React</span>
+                                <span class="badge-tag"><i class="devicon-nodejs-plain"></i>Node.js</span>
+                                <span class="badge-tag"><i class="devicon-express-original"></i>Express</span>
+                                <span class="badge-tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
+                                <span class="badge-tag"><i class="devicon-tailwindcss-plain"></i>Tailwind</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-item-card">
                         <div class="project-image-box">
-                            <img src="assert/paw.jpg" alt="Happy Paws" class="project-thumb">
+                            <img src="assert/paw.jpg" alt="Happy Paws" class="project-thumb" width="140" height="140" loading="lazy">
                         </div>
                         <div class="project-info-box">
                             <div class="project-header-row">
@@ -386,16 +474,16 @@
                             </div>
                             <p class="project-summary-text">A community-focused platform engineered to support shelter animals. Provides centralized hubs for adoptions, volunteer networking, and pet care advice.</p>
                             <div class="project-tech-badges">
-                                <span class="badge-tag">HTML5</span>
-                                <span class="badge-tag">CSS3</span>
-                                <span class="badge-tag">JavaScript</span>
+                                <span class="badge-tag"><i class="devicon-html5-plain"></i>HTML5</span>
+                                <span class="badge-tag"><i class="devicon-css3-plain"></i>CSS3</span>
+                                <span class="badge-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-item-card">
                         <div class="project-image-box">
-                            <img src="assert/spotify.webp" alt="Spotify Clone" class="project-thumb">
+                            <img src="assert/spotify.webp" alt="Spotify Clone" class="project-thumb" width="140" height="140" loading="lazy">
                         </div>
                         <div class="project-info-box">
                             <div class="project-header-row">
@@ -407,9 +495,9 @@
                             </div>
                             <p class="project-summary-text">A complex front-end web application that meticulously replicates the core user interface and audio experience of Spotify. Focused on high performance and responsiveness.</p>
                             <div class="project-tech-badges">
-                                <span class="badge-tag">React</span>
-                                <span class="badge-tag">HTML5</span>
-                                <span class="badge-tag">CSS3</span>
+                                <span class="badge-tag"><i class="devicon-react-original"></i>React</span>
+                                <span class="badge-tag"><i class="devicon-html5-plain"></i>HTML5</span>
+                                <span class="badge-tag"><i class="devicon-css3-plain"></i>CSS3</span>
                             </div>
                         </div>
                     </div>
