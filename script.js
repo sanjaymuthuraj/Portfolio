@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nowTheme);
+            localStorage.setItem('theme', nowTheme);
+        });
+    }
+
     // 0. Scroll Progress Bar & Scrollspy setup
     const scrollBar = document.getElementById('scroll-progress');
     const sections = document.querySelectorAll('.scroll-section, #profile-summary');
@@ -259,6 +274,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        function isDarkMode() {
+            return document.documentElement.getAttribute('data-theme') === 'dark';
+        }
+
         class Particle {
             constructor() {
                 this.x = Math.random() * width;
@@ -314,8 +333,8 @@ document.addEventListener("DOMContentLoaded", () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                if (isOverSidebar(this.x, this.y)) {
-                    ctx.fillStyle = 'rgba(56, 239, 125, 0.6)'; // neon green for dark sidebar
+                if (isOverSidebar(this.x, this.y) || isDarkMode()) {
+                    ctx.fillStyle = 'rgba(56, 239, 125, 0.6)'; // neon green for dark sidebar/theme
                 } else {
                     ctx.fillStyle = 'rgba(21, 128, 61, 0.5)'; // forest green for light content area
                 }
@@ -382,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ctx.lineTo(p2.x, p2.y);
                         
                         // Adapt connection line color depending on area
-                        if (isOverSidebar(p1.x, p1.y) || isOverSidebar(p2.x, p2.y)) {
+                        if (isOverSidebar(p1.x, p1.y) || isOverSidebar(p2.x, p2.y) || isDarkMode()) {
                             ctx.strokeStyle = `rgba(56, 239, 125, ${alpha})`;
                         } else {
                             ctx.strokeStyle = `rgba(21, 128, 61, ${alpha * 1.25})`;
@@ -403,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        if (isOverSidebar(p1.x, p1.y) || isOverSidebar(mouse.x, mouse.y)) {
+                        if (isOverSidebar(p1.x, p1.y) || isOverSidebar(mouse.x, mouse.y) || isDarkMode()) {
                             ctx.strokeStyle = `rgba(56, 239, 125, ${alpha})`;
                         } else {
                             ctx.strokeStyle = `rgba(21, 128, 61, ${alpha * 1.25})`;

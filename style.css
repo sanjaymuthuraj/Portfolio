@@ -19,6 +19,34 @@
     --text-content-muted: #4b5563; /* slate-600 */
     --green-content: #15803d; /* High-contrast forest green for readability */
     --border-content: #e5e7eb; /* slate-200 */
+    
+    /* Responsive Content Area Variables */
+    --bg-card: #f9fafb;
+    --bg-card-project: #ffffff;
+    --bg-navbar: rgba(255, 255, 255, 0.92);
+    --bg-badge: rgba(21, 128, 61, 0.04);
+    --border-badge: rgba(21, 128, 61, 0.12);
+    
+    --toggle-bg: #f3f4f6;
+    --toggle-icon: #4b5563;
+}
+
+[data-theme="dark"] {
+    /* Content Area (Dark Mode) */
+    --bg-content: #0d0f10;
+    --text-content: #e3e7e8;
+    --text-content-muted: #8b949e;
+    --green-content: #38ef7d; /* High-contrast neon green for dark backgrounds */
+    --border-content: #1b1e20;
+    
+    --bg-card: #141718;
+    --bg-card-project: #111314;
+    --bg-navbar: rgba(13, 15, 16, 0.92);
+    --bg-badge: rgba(56, 239, 125, 0.06);
+    --border-badge: rgba(56, 239, 125, 0.18);
+    
+    --toggle-bg: #1b1e20;
+    --toggle-icon: #f3f4f6;
 }
 
 /* Reset & Base Elements */
@@ -502,7 +530,7 @@ a {
 .content-navbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.92);
+    background: var(--bg-navbar);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-content);
@@ -515,6 +543,7 @@ a {
 .content-nav {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .content-nav .nav-links {
@@ -848,7 +877,7 @@ a.contact-item:hover {
 }
 
 .stat-card {
-    background: #f9fafb;
+    background: var(--bg-card);
     border: 1px solid var(--border-content);
     border-radius: 6px;
     padding: 1.1rem;
@@ -967,7 +996,7 @@ a.contact-item:hover {
     border-radius: 8px;
     overflow: hidden;
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    background: #ffffff;
+    background: var(--bg-card-project);
     position: relative;
 }
 
@@ -1014,7 +1043,7 @@ a.contact-item:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f9fafb;
+    background: var(--bg-card);
 }
 
 .project-thumb {
@@ -1093,8 +1122,8 @@ a.contact-item:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    background-color: rgba(21, 128, 61, 0.04);
-    border: 1px solid rgba(21, 128, 61, 0.12);
+    background-color: var(--bg-badge);
+    border: 1px solid var(--border-badge);
     color: var(--green-content);
     font-family: var(--font-mono);
     font-size: 0.65rem;
@@ -1325,7 +1354,7 @@ a.contact-item:hover {
         order: 2;
         margin: 0;
         padding: 1.1rem 2.5rem;
-        background: rgba(255, 255, 255, 0.92);
+        background: var(--bg-navbar);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--border-content);
@@ -1525,4 +1554,74 @@ a.contact-item:hover {
     .footer {
         padding: 1.5rem 1.25rem 3rem;
     }
+}
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON & SMOOTH TRANSITIONS
+   ========================================================================== */
+
+.theme-toggle-btn {
+    background-color: var(--toggle-bg);
+    border: 1px solid var(--border-content);
+    color: var(--toggle-icon);
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
+    margin-left: 1.5rem;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--border-content);
+    border-color: var(--green-content);
+    color: var(--green-content);
+    transform: scale(1.05);
+}
+
+.theme-toggle-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: none;
+}
+
+/* Page transitions for seamless color shifts */
+.content-area,
+.content-navbar,
+.stat-card,
+.project-item-card,
+.project-image-box,
+.badge-tag,
+.divider-line,
+.green-divider,
+.job-title,
+.degree-title,
+.activity-text,
+.footer,
+.footer-contact-link,
+.footer-divider,
+.footer-bottom,
+body {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
